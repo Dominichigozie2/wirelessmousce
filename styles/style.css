@@ -6,9 +6,11 @@
 }
 
 *{
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: .5s;
 }
 
 :root{
@@ -21,13 +23,65 @@
   --color-dark-200:#000000;
 }
 
+
+/* the animations */
+.transformY{
+  transform: translateY(100px);
+  scale: 0.4;
+  opacity: 0;
+  transition: all 900ms ease-in-out;
+}
+.scale{
+  scale: 0.2;
+  opacity: 0;
+  transition: all 900ms ease-in-out;
+}
+.fade-in{
+  opacity: 0;
+  transition: 900ms ease-in-out;
+}
+.fade-in.appear{
+  opacity: 1;
+}
+.fade-from-right{
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 900ms ease-in-out;
+}
+.fade-from-left{
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 900ms ease-in-out;
+}
+.transformY.appear{
+  transform: translateY(0);
+  opacity: 1;
+  scale: 1;
+}
+.fade-from-right.appear{
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-from-left.appear{
+  opacity: 1;
+  transform: translateX(0);
+}
+.scale.appear{
+  opacity: 1;
+  scale: 1;
+}
+
+
+/* the animations */
+
 body{
+    scroll-behavior: smooth;
     font-family: "CustomFont", sans-serif;
     font-weight: 400;
     font-style: normal;
-    overflow-x: hidden;
     min-height: 100vh;
     font-size: 12px;
+    overflow-x: hidden;
     color: var(--color-lit-300);
     background: var(--color-dark-100);
 }
@@ -64,7 +118,7 @@ body{
       }
 
     }
-    .btn{
+    .bbtn{
       margin-top: 5rem  ;
       padding: 1rem 4rem;
       text-decoration: none;
@@ -87,7 +141,7 @@ body{
         font-size: 700;
       }
     }
-    .btn::before{
+    .bbtn::before{
       content: " ";
       position: absolute;
       top: var(--y);
@@ -100,10 +154,10 @@ body{
       background: var(--color-dark-100);
     }
 
-    .btn:hover{
+    .bbtn:hover{
       color: var(--color-lit-100);
     }
-    .btn:hover::before{
+    .bbtn:hover::before{
       width: 300px;
       height: 300px;
     }
@@ -375,6 +429,7 @@ nav{
   gap: 1rem;
   text-align: center;
   position: relative;
+ 
 
   h1{
     position: absolute;
@@ -439,13 +494,13 @@ nav{
       height: 25rem;
       background: #7e7e7e1c;
       border-radius: 10px;
+     
 
     img{
       position: relative;
       width: 120px;
       z-index: 1;
-      transform: translateY(-5rem);
-      transition: all 500ms ease-in-out;
+    
     }
 
 
@@ -469,7 +524,6 @@ nav{
     width: 60%;height: 10%;
     background: #1111114f;
     border-radius: 50%;
-    backdrop-filter: blur(10px);
     box-shadow: 0px 0px 15px 20px #1111114f;
   }
   .product-mouse{
@@ -504,6 +558,7 @@ nav{
         background: #7e7e7e1c;
         border-radius: 10px;
         padding: 1rem;
+       
         .img-section{
           lord-icon{
             width:170px;
@@ -551,6 +606,7 @@ nav{
       border-radius: 5px;
       gap: 2rem;
       background: #7e7e7e1c;
+     
       img{
         width: 100px;
       }
@@ -564,6 +620,7 @@ nav{
 
 /* ====contacts======== */
 .contact{
+  
   padding: 10rem 0;
   .contact-container{
     display: flex;
@@ -578,6 +635,7 @@ nav{
         display: flex;
         flex-direction: column;
         gap: 2rem;
+       
         h1{
           color: var(--color-lit-200);
           font-weight: 700;
@@ -628,7 +686,7 @@ nav{
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        
+       form{ 
         h5{
           color: var(--color-lit-200);
           font-size: 14px;
@@ -638,7 +696,7 @@ nav{
           display: grid;
           margin: 2rem 0;
           grid-template-columns: repeat(2,1fr);
-          width: 80%;
+          width: 100%;
           flex-direction: column;
           gap: 2rem;
           .span-2{
@@ -670,7 +728,7 @@ nav{
             }
           }
         }
-        button{
+        .bbtn{
           position: relative;
           border: none;
           outline: none;
@@ -691,7 +749,7 @@ nav{
             z-index: 1
           }
         }
-        button::before{
+        .bbtn::before{
           content: " ";
           position: absolute;
           top: var(--y);
@@ -704,11 +762,12 @@ nav{
           background: var(--color-dark-100);
         }
 
-        button:hover::before{
+        .bbtn:hover::before{
           width: 300px;
           height: 300px;
         }
   
+      }
       }
       }
       }
@@ -761,6 +820,8 @@ nav{
 
 /* =========mobile========== */
 @media(width < 1100px) {
+
+
  .container{
   width: 95%;
  }
@@ -1024,8 +1085,21 @@ nav{
       }
     }
   }
-
+  .products{
+    .products-container{
+      gap: 1rem;
+      .production-slide{
+        .production-slide-items{
+          margin-top: 4rem;
+        }
+      }
+    }
+  }
+  .service{
+    padding: 15rem 0 5rem 0;
+  }
   .contact{
+    padding: 5rem 0;
     .contact-container{
       .contact-row{
         .contact-col-2{
@@ -1043,3 +1117,8 @@ nav{
   }
 }
 /* =========mobile========== */
+
+
+
+
+/* ======All Animations =========== */
