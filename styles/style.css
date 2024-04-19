@@ -9,7 +9,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: .5s;
+  /* transition: .2s; */
 }
 
 :root{
@@ -22,7 +22,13 @@
   --color-dark-200:#000000;
 }
 
-
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background: var(--secondary-color);
+  border-radius: 2ch;
+}
 /* the animations */
 .transformY{
   transform: translateY(100px);
@@ -77,6 +83,7 @@ html{
 /* the animations */
 
 body{
+    position: relative;
     scroll-behavior: smooth;
     font-family: "CustomFont", sans-serif;
     font-weight: 400;
@@ -170,9 +177,9 @@ body{
   margin-inline: auto;
 }
 nav{
-  display: flex;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
   background: var(--color-dark-100);
 
@@ -284,6 +291,7 @@ nav{
 
 /* hero section */
 .hero{
+  margin-top: 5rem;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1096,9 +1104,9 @@ nav{
 
 
 @media(width < 450px){
-  body{
+  /* body{
     overflow-x: hidden;
-  }
+  } */
   .member{
     .member-container{
       .member-row{
