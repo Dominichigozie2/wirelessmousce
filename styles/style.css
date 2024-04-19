@@ -713,6 +713,7 @@ nav{
               color: var(--color-lit-300);
               font-size: 14px;
               outline: none;
+              width: 100%;
               background: #7e7e7e1c;
             }
             textarea{
@@ -1072,7 +1073,23 @@ nav{
     }
   }
  }
-
+ .contact{
+  padding: 5rem 0;
+  .contact-container{
+    .contact-row{
+      .contact-col-2{
+        form{
+        .input-container{
+          grid-template-columns: 1fr;
+          .span-2{
+            grid-column: span 1;
+          }
+        }
+      }
+      }
+    }
+  }
+}
 }
 
 
@@ -1106,7 +1123,8 @@ nav{
 
           .input-container{
             width: 100%;
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1;
             .span-2{
               grid-column: span 1;
             }
